@@ -23,6 +23,6 @@ public interface ProduitRepository extends JpaRepository<Produit, Long> {
     @Query("SELECT p FROM Produit p WHERE p.prix BETWEEN :min AND :max")
     List<Produit> findByPrixBetween(@Param("min") Double min,
                                     @Param("max") Double max);
-
+    List<Produit> findByStock(Integer stock);
 }
 
